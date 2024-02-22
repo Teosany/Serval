@@ -11,6 +11,10 @@ class BaseClass
     {
         $this->_dbh = new DataBase();
     }
+    public function verif()
+    {
+        return 5;
+    }
 
     public function getX(): int
     {

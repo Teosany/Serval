@@ -1,4 +1,7 @@
 <?php
-spl_autoload_register(function ($class){
-    require_once($class.'.class.php');
-});
+require 'src/model.php';
+
+getClass();
+$class = new BaseClass();
+
+require 'templates/homepage.php';
