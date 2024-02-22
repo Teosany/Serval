@@ -1,5 +1,4 @@
 <?php
-
 class DataBase extends PDO
 {
     private string $_DB_HOST = 'localhost';
