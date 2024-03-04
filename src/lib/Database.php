@@ -15,7 +15,9 @@ class Database extends \PDO
         if (empty($_ENV["DB_HOST"])) {
             try {
                 if ($this->database === null) {
-                    $this->database = parent::__construct("mysql:host=" . $this->_DB_HOST . ";dbname=" . $this->_DB_NAME, $this->_DB_USER, $this->_DB_PASS);
+                    $this->database = parent::__construct("mysql:host=" . $this->_DB_HOST . ";dbname=" . $this->_DB_NAME, $this->_DB_USER, $this->_DB_PASS );
+//                    $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
                 }
             } catch (\PDOException $e) {
                 echo "Erreur de connection : " . $e->getMessage();

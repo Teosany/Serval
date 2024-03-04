@@ -1,8 +1,6 @@
 <?php
 
-namespace App\src\controllers;
-
-use App\src\models\PositionActuel;
+namespace App\src\models;
 
 class FirstPersonText extends PositionActuel
 {
