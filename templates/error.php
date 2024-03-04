@@ -6,7 +6,7 @@
 
     <title>FPS</title>
 
-    <link href="style.css" rel="stylesheet"/>
+    <link href="../style.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -16,17 +16,17 @@
             <img class="col-3 img-fluid" src="src/public/assets/logo.png" alt="logo">
         </div>
         <div class="position-absolute p-5 container text-end">
-            <img class="col-2 img-fluid" style="rotate: <?= $this->positionRep->firstPersonC ?>deg"
+            <img class="col-2 img-fluid" style="rotate: <?= $positionRep->firstPersonC ?>deg"
                  src="src/public/assets/compass.png" alt="logo">
         </div>
-        <img class="col img-fluid p-0 m-0 fps" src="<?= $this->positionRep->firstPersonV ?>" alt="image">
+        <img class="col img-fluid p-0 m-0 fps" src="<?= $positionRep->firstPersonV ?>" alt="image">
         <div class="position-absolute bottom-0 start-50 translate-middle-x text-center card border-dark mb-3"
              style="max-width: 25rem; opacity: 40%">
-            <div class="h2 card-body" <?php if (!isset($this->positionRep->firstPersonT)){echo 'hidden';} ?>
-                <h5 class="card-title"><?= $this->positionRep->firstPersonT ?></h5>
-            </div>
+            <div class="h2 card-body" <?php if (!isset($positionRep->firstPersonT)){echo 'hidden';} ?>
+            <h5 class="card-title"><?= $positionRep->firstPersonT ?></h5>
         </div>
     </div>
+</div>
 </div>
 
 <script type="text/javascript" src="script.js"></script>

@@ -1,49 +1,40 @@
 <?php
 
-class BaseClass
+namespace App\src\lib;
+
+class Position
 {
-    protected int $_currentX;
-    protected int $_currentY;
-    protected int $_currentAngle;
-    protected object $_dbh;
-
-    public function __construct()
-    {
-        $this->_dbh = new DataBase();
-    }
-    public function verif()
-    {
-        return 5;
-    }
-
+    protected ?int $currentX = 0;
+    protected ?int $currentY = 0;
+    protected ?int $currentAngle = 0;
     public function getX(): int
     {
-        return $this->_currentX;
+        return $this->currentX;
     }
 
     public function getY(): int
     {
-        return $this->_currentY;
+        return $this->currentY;
     }
 
     public function getAngle(): int
     {
-        return $this->_currentAngle;
+        return $this->currentAngle;
     }
 
-    public function setX(int $x)
+    public function setX(int $x): void
     {
-        $this->_currentX = $x;
+        $this->currentX = $x;
     }
 
-    public function setY(int $y)
+    public function setY(int $y): void
     {
-        $this->_currentY = $y;
+        $this->currentY = $y;
     }
 
-    public function setAngle(int $angle)
+    public function setAngle(int $angle): void
     {
-        $this->_currentAngle = $angle;
+        $this->currentAngle = $angle;
     }
 
     public function checkForward(): bool
