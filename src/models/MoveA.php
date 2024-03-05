@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\src\models;
 
@@ -12,7 +13,7 @@ class MoveA
     {
         $this->positionRep = $positionRep;
     }
-    public function move(int $x, int $y, int $a): array
+    public function moveA(int $x, int $y, int $a): array
     {
         $statement = $this->positionRep->connection->query(
             "SELECT coordX, coordY, direction, text, path, compas FROM map m

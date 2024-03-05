@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\src\lib;
 
@@ -9,17 +10,14 @@ class Position
     private ?int $currentAngle = 0;
     private ?string $currentKey;
 
-
     private function getX(): int
     {
         return $this->currentX;
     }
-
     private function getY(): int
     {
         return $this->currentY;
     }
-
     private function getAngle(): int
     {
         $a = $this->currentAngle;
@@ -33,23 +31,19 @@ class Position
         }
         return $a;
     }
-
     private function getKey(): string
     {
         return $this->currentKey;
     }
 
-
     private function setX(int $x): void
     {
         $this->currentX = $x;
     }
-
     private function setY(int $y): void
     {
         $this->currentY = $y;
     }
-
     private function setAngle(int $angle): void
     {
         $this->currentAngle = $angle;
@@ -58,7 +52,6 @@ class Position
     {
         $this->currentKey = $key;
     }
-
     public function setCord(int $x, int $y, int $a, string $key): void
     {
         $this->setX($x);
@@ -67,14 +60,12 @@ class Position
         $this->setKey($key);
     }
 
-
     public function updateTurn(int $a): int
     {
         $this->setAngle($a);
 
         return $this->getAngle();
     }
-
 
     public function updateMove(): ?array
     {
@@ -97,22 +88,18 @@ class Position
         return $this->checkKeydown($x, $y, $a, $key, 1, -1, 1, -1, true);
 
     }
-
     private function checkBack($x, $y, $a, $key): array
     {
         return $this->checkKeydown($x, $y, $a, $key, -1, 1, -1, 1, true);
     }
-
     private function checkRight($x, $y, $a, $key): array
     {
         return $this->checkKeydown($x, $y, $a, $key, -1, 1, 1, -1, false);
     }
-
     private function checkLeft($x, $y, $a, $key): array
     {
         return $this->checkKeydown($x, $y, $a, $key, 1, -1, -1, 1, false);
     }
-
     private function checkKeydown($x, $y, $a, $key, $intFi, $intS, $intT, $intF, $isHorizontal): array
     {
         switch ($isHorizontal) {

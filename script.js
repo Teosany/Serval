@@ -4,6 +4,7 @@ document.addEventListener('keyup', (event) => {
         let x = $('.x').val();
         let y = $('.y').val();
         let a = $('.a').val();
+        console.log(x + y + a);
 
         $.ajax({
             type: 'POST',
@@ -27,7 +28,6 @@ document.addEventListener('keyup', (event) => {
                     $('.textBlock').text(msg['text']);
                 }
                 $('.compas').css('rotate', msg['a'] + 'deg')
-            } else {
             }
         });
     }

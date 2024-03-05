@@ -7,7 +7,7 @@ use App\src\lib\Database;
 use App\src\lib\PositionActuel;
 use App\src\models\MoveA;
 
-class Move
+class Take
 {
     public PositionActuel $positionRep;
 
@@ -17,7 +17,7 @@ class Move
         $this->positionRep->connection = new Database();
     }
 
-    public function move(int $x, int $y, int $a, string $key): array
+    public function take(int $x, int $y, int $a): array
     {
         $this->positionRep->setCord($x, $y, $a, $key);
 
