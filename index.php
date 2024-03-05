@@ -9,7 +9,7 @@ spl_autoload_register(static function ($fqcn): void {
 use App\src\controllers\Homepage;
 use App\src\controllers\Move;
 use App\src\lib\Database;
-use App\src\models\PositionActuel;
+use App\src\lib\PositionActuel;
 
 try {
     $homepage = new Homepage();

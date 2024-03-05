@@ -26,8 +26,8 @@ document.addEventListener('keyup', (event) => {
                     $('.textBlock').removeAttr('hidden');
                     $('.textBlock').text(msg['text']);
                 }
+                $('.compas').css('rotate', msg['a'] + 'deg')
             } else {
-                console.log(msg)
             }
         });
     }

@@ -3,7 +3,7 @@
 namespace App\src\controllers;
 
 use App\src\lib\Database;
-use App\src\models\PositionActuel;
+use App\src\lib\PositionActuel;
 use App\src\models\MoveA;
 
 class Move
@@ -16,9 +16,11 @@ class Move
         $this->positionRep->connection = new Database();
     }
 
-    public function move($x, $y, $a, $key): array
+    public function move(int $x, int $y, int $a, string $key): array
     {
-        $response = $this->positionRep->updateMove($x, $y, $a, $key);
+        $this->positionRep->setCord($x, $y, $a, $key);
+
+        $response = $this->positionRep->updateMove();
 
         $a = $this->positionRep->updateTurn($response[2]);
 

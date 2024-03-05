@@ -2,11 +2,10 @@
 
 namespace App\src\controllers;
 
-use App\src\lib\Database;
-use App\src\models\PositionActuel;
+use App\src\lib\PositionActuel;
 
 
-class Homepage extends \App\src\models\PositionActuel
+class Homepage extends PositionActuel
 {
     public PositionActuel $positionRep;
 

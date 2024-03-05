@@ -2,6 +2,8 @@
 
 namespace App\src\models;
 
+use App\src\lib\PositionActuel;
+
 class MoveA
 {
     private PositionActuel $positionRep;

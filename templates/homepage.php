@@ -13,10 +13,10 @@
 <div class="container-fluid min-vh-100">
     <div class="row min-vh-100">
         <div class="position-absolute p-3 text-center">
-            <img class="col-3 img-fluid" src="src/public/assets/logo.png" alt="logo">
+            <img class="col-3 img-fluid" style="opacity: 0.8" src="src/public/assets/logo.png" alt="logo">
         </div>
         <div class="position-absolute p-5 container text-end">
-            <img class="col-2 img-fluid" style="rotate: 0deg"
+            <img class="col-2 img-fluid compas" style="background: white; opacity: 0.3; border-radius: 20px; rotate:"
                  src="src/public/assets/compass.png" alt="logo">
         </div>
         <img class="col img-fluid p-0 m-0 fps" src="src/public/images/01-0.jpg" alt="image">
