@@ -31,6 +31,8 @@ ELSE i.status_action = 0 END"
                 $sql = $this->positionRep->connection->query("SELECT text FROM text WHERE status_action = 1");
                 $row1 = $sql->fetch();
                 $row['text'] = $row1['text'];
+            } else {
+//                $sql = $this->positionRep->connection->query("UPDATE actions SET requis = 0 WHERE action = 'use'");
             }
             return array("x" => $x, "y" => $y, "a" => $a, "image" => $row['path'], 'text' => $row['text'], 'compas' => $row['direction'], 'status' => $row['status_action']);
         } else {

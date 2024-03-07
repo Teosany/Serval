@@ -14,7 +14,4 @@ class PositionActuel extends Position
             return false;
         }
     }
-//    public function doAction(){
-//
-//    }
 }

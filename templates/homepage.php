@@ -28,6 +28,7 @@
              style="max-width: 40rem; opacity: 40%">
             <div class="h2 card-body textBlock">
                 <h5 class="card-title">Cela fait peur à mort</h5>
+                <h5 class="card-text">(Vous pouvez contrôler les actions avec les touches w, s, a, d, q, e, r)</h5>
             </div>
         </div>
     </div>

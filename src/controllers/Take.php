@@ -17,7 +17,7 @@ class Take
         $this->positionRep->connection = new Database();
     }
 
-    public function take(int $x, int $y, int $a): array
+    public function take(int $x, int $y, int $a): ?array
     {
         $this->positionRep->setCord($x, $y, $a, 'KeyR');
 
@@ -27,6 +27,12 @@ class Take
             return $query->TakeA($x, $y, $a);
         }
 
-    return [1,2];
+    return null;
+    }
+    public function use(int $x, int $y, int $a): ?array
+    {
+        $query = new TakeA($this->positionRep);
+
+        return $query->UseA($x, $y, $a);
     }
 }
