@@ -5,7 +5,7 @@ namespace App\src\controllers;
 
 use App\src\lib\Database;
 use App\src\lib\PositionActuel;
-use App\src\models\MoveA;
+use App\src\models\TakeA;
 
 class Take
 {
@@ -19,16 +19,14 @@ class Take
 
     public function take(int $x, int $y, int $a): array
     {
-        $this->positionRep->setCord($x, $y, $a, $key);
+        $this->positionRep->setCord($x, $y, $a, 'KeyR');
 
-        $response = $this->positionRep->updateMove();
+        if ($this->positionRep->checkAction($x, $y, $a, 'KeyR') === true) {
+            $query = new TakeA($this->positionRep);
 
-        $a = $this->positionRep->updateTurn($response[2]);
+            return $query->TakeA($x, $y, $a);
+        }
 
-        $x = $response[0];
-        $y = $response[1];
-
-        $query = new MoveA($this->positionRep);
-        return $query->moveA($x, $y, $a);
+    return [1,2];
     }
 }

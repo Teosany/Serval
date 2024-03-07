@@ -18,20 +18,22 @@ try {
     $homepage->positionRep = new PositionActuel();
     $homepage->positionRep->connection = new Database();
 
-    if (isset($_POST['key']) && $_POST['key'] === 'r') {
+    if (isset($_POST['key']) && $_POST['key'] === 'KeyR' && (int)$_POST['x'] === 1 && (int)$_POST['y'] === 1 && (int)$_POST['a'] === 90) {
         $take = new Take($homepage);
 
         header('Content-Type: application/json; charset=utf-8');
-        $response = $take->take($_POST['x'], $_POST['y'], $_POST['a'], $_POST['key']);
+        $response = $take->take((int)$_POST['x'], (int)$_POST['y'], (int)$_POST['a']);
+        error_log(print_r($response,true));
 
         echo json_encode($response);
-
-    } elseif (isset($_POST['key'])) {
+    } else
+        if (isset($_POST['key'])) {
         $move = new Move($homepage);
 
         header('Content-Type: application/json; charset=utf-8');
         $response = $move->move((int)$_POST['x'], (int)$_POST['y'], (int)$_POST['a'], $_POST['key']);
 
+        error_log(print_r($response, true));
         echo json_encode($response);
     } else {
         try {

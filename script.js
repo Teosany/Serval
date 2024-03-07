@@ -1,19 +1,20 @@
-document.addEventListener('keyup', (event) => {
-    const key = ['w', 's', 'a', 'd', 'q', 'e', 'r']
-    if (key.includes(event.key)) {
+document.addEventListener('keypress', (event) => {
+    const key = ['KeyW', 'KeyS', 'KeyA', 'KeyD', 'KeyQ', 'KeyE', 'KeyR']
+    if (key.includes(event.code)) {
         let x = $('.x').val();
         let y = $('.y').val();
         let a = $('.a').val();
-        console.log(x + y + a);
+        let status = $('.status').val();
 
         $.ajax({
             type: 'POST',
             url: 'index.php',
             data: {
-                key: event.key,
-                x: x,
-                y: y,
-                a: a
+                key: event.code,
+                x: Number(x),
+                y: Number(y),
+                a: Number(a),
+                status: Number(status)
             }
         }).done(function (msg) {
             if (!msg['error']) {

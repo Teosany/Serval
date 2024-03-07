@@ -36,6 +36,11 @@ class Position
         return $this->currentKey;
     }
 
+    protected function getCord(): array
+    {
+        return [$this->getX(),$this->getY(),$this->getAngle(),$this->getKey()];
+    }
+
     private function setX(int $x): void
     {
         $this->currentX = $x;
@@ -105,23 +110,23 @@ class Position
         switch ($isHorizontal) {
             case true:
                 match ($key) {
-                    'w' => $x += $intFi,
-                    's' => $x += $intS,
-                    'a' => $y += $intT,
-                    'd' => $y += $intF,
-                    'q' => $a += 90,
-                    'e' => $a -= 90,
+                    'KeyW' => $x += $intFi,
+                    'KeyS' => $x += $intS,
+                    'KeyA' => $y += $intT,
+                    'KeyD' => $y += $intF,
+                    'KeyQ' => $a += 90,
+                    'KeyE' => $a -= 90,
                     default => NULL,
                 };
                 break;
             default:
                 match ($key) {
-                    'w' => $y += $intFi,
-                    's' => $y += $intS,
-                    'a' => $x += $intT,
-                    'd' => $x += $intF,
-                    'q' => $a += 90,
-                    'e' => $a -= 90,
+                    'KeyW' => $y += $intFi,
+                    'KeyS' => $y += $intS,
+                    'KeyA' => $x += $intT,
+                    'KeyD' => $x += $intF,
+                    'KeyQ' => $a += 90,
+                    'KeyE' => $a -= 90,
                     default => NULL,
                 };
         }

@@ -23,8 +23,9 @@
         <input class="x" type="hidden" value="0">
         <input class="y" type="hidden" value="0">
         <input class="a" type="hidden" value="0">
+        <input class="status" type="hidden" value="0">
         <div class="position-absolute bottom-0 start-50 translate-middle-x text-center card border-dark mb-3"
-             style="max-width: 25rem; opacity: 40%">
+             style="max-width: 40rem; opacity: 40%">
             <div class="h2 card-body textBlock">
                 <h5 class="card-title">Cela fait peur à mort</h5>
             </div>
