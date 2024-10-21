@@ -1,6 +1,6 @@
 # A first-person game, reminiscent of Doom, developed as part of a study on the "class" concept in PHP.
 
-View Live: https://serval.zeabur.app/index.php
+View Live: https://serval.zeabur.app/index.php 
 
 ## License
 
